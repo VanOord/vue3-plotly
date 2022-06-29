@@ -1,10 +1,10 @@
 <template>
-  <div :id="plotlyId"></div>
+<div :id="plotlyId"></div>
 </template>
 
 <script>
 import { v4 as uuidv4 } from 'uuid';
-import Plotly from 'plotly.js';
+import Plotly from 'plotly.js-dist';
 
 let timeOutFunctionId;
 
@@ -34,10 +34,7 @@ export default {
     this.resizeObserver.observe(document.getElementById(this.plotlyId));
   },
 
-  beforeUnmount() {
-    this.resizeObserver.disconnect();
-    Plotly.purge(this.plotlyId);
-  },
+  beforeUnmount() { this.resizeObserver.disconnect(); },
 
   methods: {
     setGraph() {
