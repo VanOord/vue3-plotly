@@ -1,5 +1,5 @@
-import vue from 'rollup-plugin-vue'
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import vue from 'rollup-plugin-vue';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 export default [
   {
@@ -7,15 +7,15 @@ export default [
     output: [
       {
         format: 'esm',
-        file: 'dist/library.mjs'
+        file: 'dist/library.mjs',
       },
       {
         format: 'cjs',
-        file: 'dist/library.js'
-      }
+        file: 'dist/library.js',
+      },
     ],
     plugins: [
-      vue(), peerDepsExternal()
-    ]
-  }
-]
+      vue(), peerDepsExternal(),
+    ],
+  },
+];

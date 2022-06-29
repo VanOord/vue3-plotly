@@ -1,9 +1,10 @@
 <template>
   <br/>
-  <button @click="() => {trace0 = !trace0} "> {{trace0 ? "Show Trace 0" : "Hide Trace 0"}} </button >
-  <button @click="() => {trace1 = !trace1} "> {{trace0 ? "Show Trace 1" : "Hide Trace 1"}} </button >
-  <button @click="() => {trace2 = !trace2} "> {{trace0 ? "Show Trace 2" : "Hide Trace 2"}} </button >
-  <VuePlotly :data="data" :layout="layout" />
+  <button @click="() => {trace0 = !trace0} "> {{trace0 ? "Hide Trace 0" : "Show Trace 0"}} </button >
+  <button @click="() => {trace1 = !trace1} "> {{trace0 ? "Hide Trace 1" : "Show Trace 1"}} </button >
+  <button @click="() => {trace2 = !trace2} "> {{trace0 ? "Hide Trace 2" : "Show Trace 2"}} </button >
+  <button @click="() => {showPlot = !showPlot} "> {{trace0 ? "Hide plot" : "Show plot"}} </button >
+  <VuePlotly v-if="showPlot" :data="data" :layout="layout" />
 </template>
 
 <script>
@@ -67,6 +68,7 @@ export default {
       trace0:true,
       trace1:true,
       trace2:true,
+      showPlot:true,
     }
   }
 

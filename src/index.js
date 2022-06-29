@@ -1,3 +1,3 @@
-import VuePlotly from './VuePlotly.vue'
+import VuePlotly from './VuePlotly.vue';
 
-export { VuePlotly } 
+export { VuePlotly };
