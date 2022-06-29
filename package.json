@@ -1,6 +1,6 @@
 {
   "name": "vue3-plotly",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "dist/library.js",
   "module": "dist/library.mjs",
@@ -10,6 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
+    "deplot": "bash deploy.sh",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
@@ -25,7 +26,6 @@
   },
   "homepage": "https://github.com/VanOord/vue3-plotly#readme",
   "peerDependencies": {
-    "plotly.js": "^1.52.1",
     "vue": "^3.2.21"
   },
   "devDependencies": {
@@ -34,5 +34,8 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-vue": "^6.0.0",
     "vuepress": "^1.9.7"
+  },
+  "dependencies": {
+    "plotly.js": "^2.12.1"
   }
 }
