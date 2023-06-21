@@ -2,7 +2,7 @@
 <VuePlotly :data="data" :layout="layout" :display-mode-bar="false"></VuePlotly>
 ```
 ```javascript
-import { VuePlotly } from 'vue-plotly'
+import { VuePlotly } from 'vue3-plotly'
 
 export default {
   components: {
