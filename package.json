@@ -1,6 +1,6 @@
 {
   "name": "vue3-plotly",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "main": "dist/library.js",
   "module": "dist/library.mjs",
@@ -42,6 +42,6 @@
     "vuepress": "^1.9.9"
   },
   "dependencies": {
-    "plotly.js-dist-min": "^2.24.2"
+    "plotly.js-dist": "^2.24.2"
   }
 }
