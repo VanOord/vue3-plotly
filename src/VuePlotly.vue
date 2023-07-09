@@ -1,15 +1,16 @@
 <template>
-<div :id="plotlyId"></div>
+  <div :id="plotlyId"></div>
 </template>
 
 <script>
-import { v4 as uuidv4 } from 'uuid';
-import Plotly from 'plotly.js-dist';
+import { v4 as uuidv4 } from "uuid";
+import Plotly from "plotly.js-dist";
+import events from "./events";
 
 let timeOutFunctionId;
 
 export default {
-  name: 'VuePlotly',
+  name: "VuePlotly",
 
   data() {
     return {
@@ -17,12 +18,18 @@ export default {
     };
   },
 
-  props: ['data', 'layout', 'config'],
+  props: ["data", "layout", "config"],
 
   watch: {
-    data() { this.setGraph(); },
-    layout() { this.setGraph(); },
-    config() { this.setGraph(); },
+    data() {
+      this.setGraph();
+    },
+    layout() {
+      this.setGraph();
+    },
+    config() {
+      this.setGraph();
+    },
   },
 
   mounted() {
@@ -34,11 +41,16 @@ export default {
     this.resizeObserver.observe(document.getElementById(this.plotlyId));
   },
 
-  beforeUnmount() { this.resizeObserver.disconnect(); },
+  beforeUnmount() {
+    this.resizeObserver.disconnect();
+  },
 
   methods: {
     setGraph() {
       Plotly.newPlot(this.plotlyId, this.data, this.layout, this.config);
+      events.forEach((e) => {
+        this.$el.on(e.completeName, e.handler(this));
+      });
     },
   },
 };
