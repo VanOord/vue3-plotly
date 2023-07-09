@@ -16,7 +16,7 @@
 <VuePlotly :data="data" :layout="layout" :display-mode-bar="false"></VuePlotly>
 ```
 ```javascript
-import { VuePlotly } from 'vue-plotly'
+import { VuePlotly } from 'vue3-plotly'
 
 export default {
   components: {
@@ -38,17 +38,17 @@ export default {
 ```
 ## API
 
-#### Props 
+#### Props
 
-- `data` ***Array*** (*optional*) 
+- `data` ***Array*** (*optional*)
 
   [Data](https://plot.ly/javascript/reference/) to be displayed
 
-- `layout` ***Object*** (*optional*) 
+- `layout` ***Object*** (*optional*)
 
   Graphic [layout](https://plot.ly/javascript/reference/#layout)
 
-- `id` ***String*** (*optional*) 
+- `id` ***String*** (*optional*)
 
   Id of the root HTML element of the component.
 
