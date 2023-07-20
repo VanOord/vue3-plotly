@@ -40,4 +40,4 @@ export default {
 }
 ```
 
-More documentation at <
+More documentation at <https://clalarco.github.io/vue3-plotly/>

@@ -2,14 +2,15 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/vue3-plotly/',
   title: "vue3-plotly",
   description: "Thin vue wrapper for plotly.js",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Usage', link: '/usage' },
-      { text: 'Installation', link: '/install' }
+      { text: 'Home', link: './' },
+      { text: 'Usage', link: './usage' },
+      { text: 'Installation', link: './install' }
     ],
 
     sidebar: [
@@ -17,17 +18,17 @@ export default defineConfig({
         text: 'User Guide',
         items: [
           {
-            text: 'Usage', link: '/usage.md',
+            text: 'Usage', link: './usage',
           },
           {
-            text: 'Installation', link: '/install.md',
+            text: 'Installation', link: './install',
           }
         ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/David-Desmaisons/vue-plotly' }
+      { icon: 'github', link: 'https://github.com/clalarco/vue-plotly' }
     ]
   }
 })
