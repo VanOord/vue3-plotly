@@ -1,7 +1,7 @@
 {
-  "name": "vue3-plotly",
-  "version": "0.0.7",
-  "description": "",
+  "name": "@clalarco/vue3-plotly",
+  "version": "0.0.1",
+  "description": "Vue 3 component for plotly.js. Forked from <https://github.com/VanOord/vue3-plotly>",
   "main": "dist/library.js",
   "module": "dist/library.mjs",
   "files": [
@@ -10,21 +10,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
-    "deplot": "bash deploy.sh",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "deploy": "bash deploy.sh",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VanOord/vue3-plotly.git"
+    "url": "git+https://github.com/clalarco/vue3-plotly.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["Vue 3", "plotly"],
+  "author": "Claudio Alarcon <https://github.com/clalarco>",
+  "contributor": "Van Oord (original author) <https://github.com/VanOord>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/VanOord/vue3-plotly/issues"
+    "url": "https://github.com/clalarco/vue3-plotly/issues"
   },
-  "homepage": "https://github.com/VanOord/vue3-plotly#readme",
+  "homepage": "https://github.com/calarco/vue3-plotly#readme",
   "peerDependencies": {
     "vue": "^3.2.21"
   },
@@ -39,7 +41,7 @@
     "rollup": "^3.25.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-vue": "^6.0.0",
-    "vuepress": "^1.9.9"
+    "vitepress": "^1.0.0-beta.5"
   },
   "dependencies": {
     "plotly.js-dist": "^2.24.2"

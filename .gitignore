@@ -35,4 +35,7 @@ yarn-error.log*
 # dotenv
 .env
 
-/docs/.vuepress/dist
+/docs/.vitepress/dist
+/docs/.vitepress/cache
+
+

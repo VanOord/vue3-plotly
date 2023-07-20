@@ -1,20 +1,23 @@
 # vue3-plotly
 
-<h2>Thin vue wrapper for <a
-              href="https://plot.ly/javascript/"
-              target="_blank"
-            >plotly.js</a></h2>
-<span>It provides:</span>
-<ul>
-  <li>all plotly.js methods and events</li>
-  <li>data reactivity</li>
-  <li>Redraw on resizing</li>
-</ul>
+# Thin vue wrapper for [plotly.js](https://plot.ly/javascript/)
+
+Forked from <https://github.com/VanOord/vue3-plotly>
+
+It provides:
+  - all plotly.js methods and events
+  - data reactivity
+  - Redraw on resizing
 
 ## Usage
-```HTML
+
+### As Single-page Compoment
+```vue
 <VuePlotly :data="data" :layout="layout" :display-mode-bar="false"></VuePlotly>
 ```
+
+### Using Plain Javascript
+
 ```javascript
 import { VuePlotly } from 'vue3-plotly'
 
@@ -36,47 +39,5 @@ export default {
   }
 }
 ```
-## API
 
-#### Props
-
-- `data` ***Array*** (*optional*)
-
-  [Data](https://plot.ly/javascript/reference/) to be displayed
-
-- `layout` ***Object*** (*optional*)
-
-  Graphic [layout](https://plot.ly/javascript/reference/#layout)
-
-- `id` ***String*** (*optional*)
-
-  Id of the root HTML element of the component.
-
-- Others:
-
-  Plotly component implements the [transparent wrapper pattern](https://zendev.com/2018/05/31/transparent-wrapper-components-in-vue.html):<br>All other props will be passed as plotly graphic [option](https://plot.ly/javascript/configuration-options/).
-
-## Installation
-```
-npm install vue3-plotly
-```
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
+More documentation at <
