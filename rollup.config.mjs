@@ -17,5 +17,6 @@ export default [
     plugins: [
       vue(), peerDepsExternal(),
     ],
+    external: ['plotly.js-dist', 'uuid'],
   },
 ];

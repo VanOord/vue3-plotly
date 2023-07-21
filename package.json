@@ -1,6 +1,6 @@
 {
   "name": "@clalarco/vue3-plotly",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "Vue 3 component for plotly.js. Forked from <https://github.com/VanOord/vue3-plotly>",
   "main": "dist/library.js",
   "module": "dist/library.mjs",
@@ -15,7 +15,7 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "docs:publish": "npm run docs:build && sh publish-docs.sh",
-    "prepublishOnly": "npm run docs:publish"
+    "prepublishOnly": "npm run build && npm run docs:publish"
   },
   "repository": {
     "type": "git",

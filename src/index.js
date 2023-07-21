@@ -1,3 +1,14 @@
-import VuePlotly from './VuePlotly.vue';
+import components from './components'
 
-export { VuePlotly };
+const plugin = {
+  install (Vue) {
+    for (const prop in components) {
+      if (components.hasOwnProperty(prop)) {
+        const component = components[prop]
+        Vue.component(component.name, component)
+      }
+    }
+  }
+}
+
+export default plugin

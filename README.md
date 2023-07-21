@@ -4,6 +4,8 @@
 
 Forked from <https://github.com/VanOord/vue3-plotly>
 
+THIS CODE IS STILL UNDER DEVELOPMENT, IT MIGHT NOT WORK YET.
+
 It provides:
   - all plotly.js methods and events
   - data reactivity
