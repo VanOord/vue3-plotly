@@ -10,7 +10,8 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: './' },
       { text: 'Usage', link: './usage' },
-      { text: 'Installation', link: './install' }
+      { text: 'Installation', link: './install' },
+      { text: 'Go to Code', link: 'https://github.com/clalarco/vue3-plotly' }
     ],
 
     sidebar: [
@@ -28,7 +29,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/clalarco/vue-plotly' }
+      { icon: 'github', link: 'https://github.com/clalarco/vue3-plotly' }
     ]
   }
 })

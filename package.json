@@ -10,10 +10,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
-    "deploy": "bash deploy.sh",
+    "deploy": "sh deploy.sh",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "docs:publish": "npm run docs:build && sh publish-docs.sh",
+    "prepublishOnly": "npm run docs:publish"
   },
   "repository": {
     "type": "git",
