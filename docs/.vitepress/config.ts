@@ -34,6 +34,10 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/clalarco/vue3-plotly' }
-    ]
+    ],
+    footer: {
+      message: 'Released under the MIT License. Forked from <a target="_blank" href="https://github.com/VanOord/vue3-plotly">&lt;VanOord/vue3-plotly&gt;</a>',
+      copyright: 'Copyright © 2023-present Claudio Alarcon'
+    }
   }
 })

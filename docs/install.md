@@ -1,24 +1,32 @@
 # Installation
 ```
-npm install vue3-plotly
+npm install @clalarco/vue3-plotly
 ```
 
-# Project setup
+Check [Usage](usage.md) for more information. 
+
+# Source code
+
+## Get source
 ```
+git clone https://github.com/clalarco/vue3-plotly.git
+cd vue3-plotly
 npm install
 ```
 
-## Compiles and hot-reloads for development
+## Build library
 ```
-npm run serve
-```
-
-## Compiles and minifies for production
-```
-npm run build
+npm run lib:build
 ```
 
-## Lints and fixes files
+## Test demo page locally
 ```
-npm run lint
+npm run demo:dev
 ```
+
+## Test documentation locally
+```
+npm run docs:dev
+```
+
+More commands are mentioned in `package.json`.

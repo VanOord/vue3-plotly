@@ -1,47 +1,49 @@
-# vue3-plotly
+# @clalarco/vue3-plotly
 
-# Thin vue wrapper for [plotly.js](https://plot.ly/javascript/)
+## Thin Vue 3 wrapper for [plotly.js](https://plot.ly/javascript/)
 
-Forked from <https://github.com/VanOord/vue3-plotly>
+Based on project from[VanOord](https://github.com/VanOord/vue3-plotly), but adding some improvements:
 
-THIS CODE IS STILL UNDER DEVELOPMENT, IT MIGHT NOT WORK YET.
+- Typescript compatible
+- Improving implementation based on `<script setup>`
+- Using Vite for building process
 
-It provides:
-  - all plotly.js methods and events
-  - data reactivity
-  - Redraw on resizing
+Also, the [documentation](https://clalarco.githb.io/vue3-plotly/docs/) and 
+the [demo page](https://clalarco.github.io/vue3-plotly/demo/) [(source code)](demo) are published at GitHub.
 
 ## Usage
 
-### As Single-page Compoment
-```vue
-<VuePlotly :data="data" :layout="layout" :display-mode-bar="false"></VuePlotly>
-```
+## Usage with Single-file Component (SFC)
 
-### Using Plain Javascript
+Usage from another component:
 
-```javascript
-import { VuePlotly } from '@clalarco/vue3-plotly'
+```html
+<Template>
+  <VuePlotly :data="data" :layout="layout"></VuePlotly>
+</Template>
 
-export default {
-  components: {
-    Plotly
-  },
-  data() {
-    return {
-      data:[{
-        x: [1,2,3,4],
-        y: [10,15,13,17],
-        type:"scatter"
-      }],
-      layout:{
-        title: "My graph"
-      }
-    }
-  }
-}
+<script setup>
+  import { VuePlotly } from 'vue3-plotly';
+
+  const data = [ ... ];
+  const layout = { ... };
+</script>
 ```
 
 More documentation at <https://clalarco.github.io/vue3-plotly/>
 
-Packaging instructions at <https://medium.com/@blaster203/how-to-create-a-component-library-with-vue-3-vitejs-typescript-8eb41f799045>
+## Code improvements
+
+I made a bunch of code organization and refactor, without losing backward compatibility:
+
+- Implementation of library in Typescript
+- Code is separated in lib, demo and docs, using npm workspaces
+- Migrating building process to [Vite](https://vitejs.dev/), using [this article as reference](https://medium.com/@blaster203/how-to-create-a-component-library-with-vue-3-vitejs-typescript-8eb41f799045)
+- Updating documentation, using [Vitepress](https://vitepress.dev/)
+- Publishing documentation and demo in GitHub Pages
+
+Future building improvements:
+
+- Add testing
+- Add semantic release
+- Add automatic deployment

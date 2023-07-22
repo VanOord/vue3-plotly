@@ -2,49 +2,35 @@
 
 ## Usage with Single-file Component (SFC)
 
-```vue
-<VuePlotly :data="data" :layout="layout" :display-mode-bar="false"></VuePlotly>
+Usage from another component:
+
+```html
+<Template>
+  <VuePlotly :data="data" :layout="layout"></VuePlotly>
+</Template>
+
+<script setup>
+  import { VuePlotly } from 'vue3-plotly';
+
+  const data = [ ... ];
+  const layout = { ... };
+</script>
 ```
 
-## Usage with Plain Javascript
+Check [Demo page](https://clalarco.github.io/vue3-plotly/demo) [(source code)](https://github.com/clalarco/vue3-plotly/blob/main/demo/src/components/PlotExample.vue) for more details to manage visualzation.
 
-```javascript
-import { VuePlotly } from 'vue3-plotly'
+## Properties
 
-export default {
-  components: {
-    Plotly
-  },
-  data() {
-    return {
-      data:[{
-        x: [1,2,3,4],
-        y: [10,15,13,17],
-        type:"scatter"
-      }],
-      layout:{
-        title: "My graph"
-      }
-    }
-  }
-}
-```
-
-## Props
-
-- `data` ***Array*** (*optional*)
+- `data` ***Plotly.Data[]***
 
   [Data](https://plot.ly/javascript/reference/) to be displayed
 
-- `layout` ***Object*** (*optional*)
+- `layout` ***Plotly.Layout***
 
   Graphic [layout](https://plot.ly/javascript/reference/#layout)
 
-- `id` ***String*** (*optional*)
+- `config` ***Object*** (*optional*)
 
-  Id of the root HTML element of the component.
+  Configuration parameters allowed by [Plotly.newPlot](https://plotly.com/javascript/plotlyjs-function-reference/#plotlynewplot) as [configuration options](https://plotly.com/javascript/configuration-options/)
 
-- Others:
-
-  Plotly component implements the [transparent wrapper pattern](https://zendev.com/2018/05/31/transparent-wrapper-components-in-vue.html).
-  All other props will be passed as plotly graphic [option](https://plot.ly/javascript/configuration-options/).
+  - default: `{ responsive: true }`

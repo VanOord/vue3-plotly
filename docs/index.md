@@ -4,8 +4,7 @@ layout: home
 
 hero:
   name: "vue3-plotly"
-  text: "Thin vue wrapper for plotly.js"
-  tagline: Forked project from https://github.com/VanOord/vue3-plotly
+  tagline: "Thin vue wrapper for plotly.js, with Typescript types"
   actions:
     - theme: brand
       text: Get started
