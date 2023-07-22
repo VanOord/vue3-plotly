@@ -2,7 +2,8 @@
 
 set -e
 
-cd docs/.vitepress/dist
+cp docs/static/index.html dist/gh-pages/
+cd dist/gh-pages
 
 git init
 git add -A

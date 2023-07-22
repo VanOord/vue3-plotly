@@ -1,21 +1,22 @@
 {
   "name": "@clalarco/vue3-plotly",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "Vue 3 component for plotly.js. Forked from <https://github.com/VanOord/vue3-plotly>",
-  "main": "dist/library.js",
-  "module": "dist/library.mjs",
-  "files": [
-    "dist/*"
+  "workspaces": [
+    "lib",
+    "demo"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c",
-    "deploy": "sh deploy.sh",
+    "lib:build": "npm run build --workspace lib",
+    "lib:publish": "npm run lib:build && npm publish --workspace lib",
+    "demo:dev": "npm run dev --workspace demo",
+    "demo:build": "npm run build --workspace demo",
+    "demo:publish": "npm run demo:build && npm publish --workspace demo",
     "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
+    "docs:build": "rm -rf dist/gh-pages && vitepress build docs && npm run demo:build",
     "docs:preview": "vitepress preview docs",
     "docs:publish": "npm run docs:build && sh publish-docs.sh",
-    "prepublishOnly": "npm run build && npm run docs:publish"
+    "prepublishOnly": "npm run lib:publish && npm run docs:publish"
   },
   "repository": {
     "type": "git",
@@ -32,24 +33,7 @@
     "url": "https://github.com/clalarco/vue3-plotly/issues"
   },
   "homepage": "https://github.com/calarco/vue3-plotly#readme",
-  "peerDependencies": {
-    "vue": "^3.2.21"
-  },
-  "devDependencies": {
-    "@babel/eslint-parser": "^7.22.5",
-    "@vue/cli-plugin-babel": "^5.0.8",
-    "@vue/compiler-sfc": "^3.3.4",
-    "eslint": "^8.43.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-vue": "^9.15.0",
-    "rollup": "^3.25.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-vue": "^6.0.0",
-    "vitepress": "^1.0.0-beta.5"
-  },
   "dependencies": {
-    "plotly.js-dist": "^2.24.2",
-    "uuid": "^9.0.0"
+    "vitepress": "^1.0.0-beta.6"
   }
 }

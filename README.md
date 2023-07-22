@@ -21,7 +21,7 @@ It provides:
 ### Using Plain Javascript
 
 ```javascript
-import { VuePlotly } from 'vue3-plotly'
+import { VuePlotly } from '@clalarco/vue3-plotly'
 
 export default {
   components: {
@@ -43,3 +43,5 @@ export default {
 ```
 
 More documentation at <https://clalarco.github.io/vue3-plotly/>
+
+Packaging instructions at <https://medium.com/@blaster203/how-to-create-a-component-library-with-vue-3-vitejs-typescript-8eb41f799045>

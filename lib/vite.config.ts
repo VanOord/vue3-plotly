@@ -31,7 +31,7 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: "src/components/main.ts",
-      name: 'myLibraryVueTs',
+      name: 'VuePlotly',
       formats: ["es", "cjs", "umd"],
       fileName: format => `plotly-vue-ts.${format}.js`
     },
@@ -50,6 +50,8 @@ export default defineConfig({
         exports: "named",
         globals: {
           vue: 'Vue',
+          'plotly.js-dist': 'Plotly',
+          'plotly.js-basic-dist': 'Plotly',
         },
       },
     },

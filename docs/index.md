@@ -13,6 +13,8 @@ hero:
     - theme: alt
       text: Installation
       link: /install
-
+    - theme: alt
+      text: Demo
+      link: https://clalarco.github.io/vue3-plotly/demo
 ---
 

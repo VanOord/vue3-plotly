@@ -7,11 +7,19 @@
     "outDir": "dist",
     "declarationDir": "dist",
     "baseUrl": ".",
+    "rootDirs": [ "src", "dist" ],
     "paths": {
       "@/*": [
         "./src/*"
       ]
     },
+    "plugins": [
+      // Transform paths in output .js files
+      { "transform": "typescript-transform-paths", "useRootDirs": true },
+  
+      // Transform paths for declarations files
+      { "transform": "typescript-transform-paths", "useRootDirs": true, "afterDeclarations": true }
+    ],
     "target": "ES2020",
     "useDefineForClassFields": true,
     "module": "ESNext",
@@ -33,5 +41,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "types": ["vite/client"]
 }
+

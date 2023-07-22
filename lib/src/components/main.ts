@@ -1,5 +1,5 @@
 import type { App } from 'vue';
-import { VuePlotly } from "@/components";
+import { VuePlotly } from ".";
 
 export default {
   install: (app: App) => {

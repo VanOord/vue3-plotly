@@ -1,7 +1,8 @@
 {
   "name": "@clalarco/vue3-plotly",
+  "version": "0.1.1",
+  "description": "Vue 3 component for plotly.js. Forked from <https://github.com/VanOord/vue3-plotly>",
   "private": false,
-  "version": "0.1.0",
   "type": "module",
   "files": [
     "dist"
@@ -16,18 +17,16 @@
   },
   "types": "./dist/main.d.ts",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "build": "vue-tsc && vite build"
   },
   "peerDependencies": {
-    "vue": "^3.3.4"
+    "vue": "3.x"
   },
   "dependencies": {
-    "@types/plotly.js-basic-dist": "^1.54.1",
     "plotly.js-dist": "^2.24.3"
   },
   "devDependencies": {
+    "@types/plotly.js-basic-dist": "^1.54.1",
     "@types/plotly.js": "^2.12.24",
     "@vitejs/plugin-vue": "^4.2.3",
     "path": "^0.12.7",
