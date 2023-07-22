@@ -1,8 +1,15 @@
 {
   "name": "@clalarco/vue3-plotly",
-  "version": "0.1.1",
-  "description": "Vue 3 component for plotly.js. Forked from <https://github.com/VanOord/vue3-plotly>",
+  "version": "0.1.2",
+  "description": "Vue 3 component for plotly.js, with Typescript support",
   "private": false,
+  "author": "Claudio Alarcon <https://github.com/clalarco>",
+  "contributor": "Van Oord (original author) <https://github.com/VanOord>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clalarco/vue3-plotly/issues"
+  },
+  "homepage": "https://clalarco.github.io/vue3-plotly/",
   "type": "module",
   "files": [
     "dist"
