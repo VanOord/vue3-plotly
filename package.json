@@ -34,6 +34,7 @@
     "docs:build": "rm -rf dist/gh-pages && vitepress build docs && npm run demo:build",
     "docs:preview": "vitepress preview docs",
     "docs:publish": "npm run docs:build && sh publish-docs.sh",
+    "build": "npm run lib:build && npm run demo:build && npm run docs:build",
     "prepublishOnly": "npm run lib:publish && npm run docs:publish",
     "build": "npm run lib:build && npm run demo:build && npm run docs:build"
   },
@@ -41,10 +42,46 @@
     "type": "git",
     "url": "https://github.com/clalarco/vue3-plotly.git"
   },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "extends": [
+      "semantic-release-monorepo"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "package.json",
+              "label": "root package.json"
+            },
+            {
+              "path": "lib/package.json",
+              "label": "lib package.json"
+            },
+            {
+              "path": "demo/package.json",
+              "label": "demo package.json"
+            }
+          ]
+        }
+      ]
+    ]
+  },
   "dependencies": {
     "vitepress": "^1.0.0-beta.6"
   },
   "devDependencies": {
+    "@semantic-release/commit-analyzer": "^10.0.1",
+    "@semantic-release/github": "^9.0.4",
+    "@semantic-release/npm": "^10.0.4",
+    "@semantic-release/release-notes-generator": "^11.0.4",
     "semantic-release": "^21.0.7",
     "semantic-release-monorepo": "^7.0.5"
   }
