@@ -1,6 +1,6 @@
 {
   "name": "@clalarco/vue3-plotly",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Vue 3 component for plotly.js. Forked from <https://github.com/VanOord/vue3-plotly>",
   "author": "Claudio Alarcon <https://github.com/clalarco>",
   "contributor": "Van Oord (original author) <https://github.com/VanOord>",
@@ -16,16 +16,13 @@
   "scripts": {
     "lib:build": "npm run build --workspace lib",
     "lib:publish": "npm run lib:build && npm publish --workspace lib",
-    
     "demo:dev": "npm run dev --workspace demo",
     "demo:build": "npm run build --workspace demo",
     "demo:publish": "npm run demo:build && npm publish --workspace demo",
-    
     "docs:dev": "vitepress dev docs",
     "docs:build": "rm -rf dist/gh-pages && vitepress build docs && npm run demo:build",
     "docs:preview": "vitepress preview docs",
     "docs:publish": "npm run docs:build && sh publish-docs.sh",
-
     "prepublishOnly": "npm run lib:publish && npm run docs:publish"
   },
   "repository": {
