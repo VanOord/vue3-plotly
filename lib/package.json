@@ -6,6 +6,10 @@
   "author": "Claudio Alarcon <https://github.com/clalarco>",
   "contributor": "Van Oord (original author) <https://github.com/VanOord>",
   "license": "MIT",
+  "keywords": [
+    "Vue 3",
+    "plotly"
+  ],
   "bugs": {
     "url": "https://github.com/clalarco/vue3-plotly/issues"
   },
