@@ -7,5 +7,6 @@ export default defineConfig({
   base: '/vue3-plotly/demo/',
   build: {
     outDir: '../dist/gh-pages/demo',
+    chunkSizeWarningLimit: 1200,
   }
 })

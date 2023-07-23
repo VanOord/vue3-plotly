@@ -1,6 +1,6 @@
 {
   "name": "@clalarco/vue3-plotly",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Vue 3 component for plotly.js, with Typescript support",
   "private": false,
   "author": "Claudio Alarcon <https://github.com/clalarco>",
