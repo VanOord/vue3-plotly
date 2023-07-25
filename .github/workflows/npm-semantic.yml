@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 18
       - run: npm clean-install
-      - run: npm build
+      - run: npm run build
 
   publish-npm:
     needs: build
@@ -30,9 +30,6 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
-      - run: npm clean-install
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: semantic
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
