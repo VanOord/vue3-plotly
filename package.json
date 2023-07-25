@@ -1,10 +1,14 @@
 {
   "name": "@clalarco/vue3-plotly",
-  "version": "0.1.4",
+  "version": "0.0.0-development",
   "description": "Vue 3 component for plotly.js. Forked from <https://github.com/VanOord/vue3-plotly>",
   "author": "Claudio Alarcon <https://github.com/clalarco>",
   "contributor": "Van Oord (original author) <https://github.com/VanOord>",
   "license": "MIT",
+  "keywords": [
+    "Vue 3",
+    "plotly"
+  ],
   "bugs": {
     "url": "https://github.com/clalarco/vue3-plotly/issues"
   },
@@ -23,17 +27,18 @@
     "docs:build": "rm -rf dist/gh-pages && vitepress build docs && npm run demo:build",
     "docs:preview": "vitepress preview docs",
     "docs:publish": "npm run docs:build && sh publish-docs.sh",
-    "prepublishOnly": "npm run lib:publish && npm run docs:publish"
+    "prepublishOnly": "npm run lib:publish && npm run docs:publish",
+    "semantic-release": "semantic-release -e semantic-release-monorepo"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/clalarco/vue3-plotly.git"
+    "url": "https://github.com/clalarco/vue3-plotly.git"
   },
-  "keywords": [
-    "Vue 3",
-    "plotly"
-  ],
   "dependencies": {
     "vitepress": "^1.0.0-beta.6"
+  },
+  "devDependencies": {
+    "semantic-release": "^21.0.7",
+    "semantic-release-monorepo": "^7.0.5"
   }
 }
