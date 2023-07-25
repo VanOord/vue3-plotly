@@ -4,8 +4,11 @@
 name: npm publish
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
+      - beta
+      - alpha
 
 jobs:
   build:
