@@ -28,7 +28,7 @@
     "docs:preview": "vitepress preview docs",
     "docs:publish": "npm run docs:build && sh publish-docs.sh",
     "prepublishOnly": "npm run lib:publish && npm run docs:publish",
-    "semantic-release": "semantic-release -e semantic-release-monorepo"
+    "build": "npm run lib:build && npm run demo:build && npm run docs:build"
   },
   "repository": {
     "type": "git",
