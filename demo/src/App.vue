@@ -1,26 +1,17 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <PlotExample/>
-</template>
-
-<script>
+<script setup lang="ts">
 import PlotExample from './components/PlotExample.vue'
-
-export default {
-  name: 'App',
-  components: {
-    PlotExample
-  }
-}
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<template>
+  <div>
+    <h1>@clalarco/vue3-plotly demo</h1>
+    <p>
+      <a target="_blank" href="https://github.com/clalarco/vue3-plotly">GitHub repository</a>
+      -
+      <a target="_blank" href="https://clalarco.github.io/vue3-plotly/docs">Documentation</a>
+    </p>
+  </div>
+  <div>
+    <PlotExample/>
+  </div>
+</template>

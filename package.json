@@ -1,47 +1,81 @@
 {
-  "name": "vue3-plotly",
-  "version": "0.0.7",
-  "description": "",
-  "main": "dist/library.js",
-  "module": "dist/library.mjs",
-  "files": [
-    "dist/*"
+  "name": "@clalarco/vue3-plotly",
+  "version": "0.0.0-development",
+  "description": "Vue 3 component for plotly.js. Forked from <https://github.com/VanOord/vue3-plotly>",
+  "author": "Claudio Alarcon <https://github.com/clalarco>",
+  "contributor": "Van Oord (original author) <https://github.com/VanOord>",
+  "license": "MIT",
+  "keywords": [
+    "Vue 3",
+    "plotly"
+  ],
+  "bugs": {
+    "url": "https://github.com/clalarco/vue3-plotly/issues"
+  },
+  "homepage": "https://github.com/calarco/vue3-plotly#readme",
+  "workspaces": [
+    "lib",
+    "demo"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c",
-    "deplot": "bash deploy.sh",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "lib:build": "npm run build --workspace lib",
+    "lib:publish": "npm run lib:build && npm publish --workspace lib",
+    "demo:dev": "npm run dev --workspace demo",
+    "demo:build": "npm run build --workspace demo",
+    "demo:publish": "npm run demo:build && npm publish --workspace demo",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "rm -rf dist/gh-pages && vitepress build docs && npm run demo:build",
+    "docs:preview": "vitepress preview docs",
+    "docs:publish": "npm run docs:build && sh publish-docs.sh",
+    "build": "npm run lib:build && npm run demo:build && npm run docs:build",
+    "prepublishOnly": "npm run lib:publish && npm run docs:publish",
+    "build": "npm run lib:build && npm run demo:build && npm run docs:build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VanOord/vue3-plotly.git"
+    "url": "https://github.com/clalarco/vue3-plotly.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/VanOord/vue3-plotly/issues"
-  },
-  "homepage": "https://github.com/VanOord/vue3-plotly#readme",
-  "peerDependencies": {
-    "vue": "^3.2.21"
-  },
-  "devDependencies": {
-    "@babel/eslint-parser": "^7.22.5",
-    "@vue/cli-plugin-babel": "^5.0.8",
-    "@vue/compiler-sfc": "^3.3.4",
-    "eslint": "^8.43.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-vue": "^9.15.0",
-    "rollup": "^3.25.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-vue": "^6.0.0",
-    "vuepress": "^1.9.9"
+  "release": {
+    "branches": [
+      "main",
+      {"name": "alpha", "prerelease": true},
+      {"name": "beta", "prerelease": true}
+    ],
+    "extends": [
+      "semantic-release-monorepo"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "package.json",
+              "label": "root package.json"
+            },
+            {
+              "path": "lib/package.json",
+              "label": "lib package.json"
+            },
+            {
+              "path": "demo/package.json",
+              "label": "demo package.json"
+            }
+          ]
+        }
+      ]
+    ]
   },
   "dependencies": {
-    "plotly.js-dist": "^2.24.2"
+    "vitepress": "^1.0.0-beta.6"
+  },
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "^10.0.1",
+    "@semantic-release/github": "^9.0.4",
+    "@semantic-release/release-notes-generator": "^11.0.4",
+    "semantic-release": "^21.0.7",
+    "semantic-release-monorepo": "^7.0.5"
   }
 }

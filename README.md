@@ -1,82 +1,24 @@
-# vue3-plotly
+# @clalarco/vue3-plotly
 
-<h2>Thin vue wrapper for <a
-              href="https://plot.ly/javascript/"
-              target="_blank"
-            >plotly.js</a></h2>
-<span>It provides:</span>
-<ul>
-  <li>all plotly.js methods and events</li>
-  <li>data reactivity</li>
-  <li>Redraw on resizing</li>
-</ul>
+## Thin Vue 3 wrapper for [plotly.js](https://plot.ly/javascript/)
 
-## Usage
-```HTML
-<VuePlotly :data="data" :layout="layout" :display-mode-bar="false"></VuePlotly>
-```
-```javascript
-import { VuePlotly } from 'vue3-plotly'
+This is the umbrella folder for this project. Please check the README in the following sections for details:
 
-export default {
-  components: {
-    Plotly
-  },
-  data() {
-    return {
-      data:[{
-        x: [1,2,3,4],
-        y: [10,15,13,17],
-        type:"scatter"
-      }],
-      layout:{
-        title: "My graph"
-      }
-    }
-  }
-}
-```
-## API
+- (Library)[lib/README.md]. This README is also used by npm publish.
+- (Demo Page)[demo/README.md]
 
-#### Props
+## Code improvements
 
-- `data` ***Array*** (*optional*)
+I made a bunch of code organization and refactor, without losing backward compatibility:
 
-  [Data](https://plot.ly/javascript/reference/) to be displayed
+- Implementation of library in Typescript
+- Code is separated in lib, demo and docs, using npm workspaces
+- Migrating building process to [Vite](https://vitejs.dev/), using [this article as reference](https://medium.com/@blaster203/how-to-create-a-component-library-with-vue-3-vitejs-typescript-8eb41f799045)
+- Updating documentation, using [Vitepress](https://vitepress.dev/)
+- Publishing documentation and demo in GitHub Pages
 
-- `layout` ***Object*** (*optional*)
+## Future improvements:
 
-  Graphic [layout](https://plot.ly/javascript/reference/#layout)
-
-- `id` ***String*** (*optional*)
-
-  Id of the root HTML element of the component.
-
-- Others:
-
-  Plotly component implements the [transparent wrapper pattern](https://zendev.com/2018/05/31/transparent-wrapper-components-in-vue.html):<br>All other props will be passed as plotly graphic [option](https://plot.ly/javascript/configuration-options/).
-
-## Installation
-```
-npm install vue3-plotly
-```
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
+- Add testing
+- Add semantic release
+- Add automatic deployment
