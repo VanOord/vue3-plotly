@@ -9,6 +9,13 @@
     "Vue 3",
     "plotly"
   ],
+  "release": {
+    "branches": [
+      "main",
+      { "name": "beta", "prerelease": true },
+      { "name": "alpha", "prerelease": true }
+    ]
+  },
   "bugs": {
     "url": "https://github.com/clalarco/vue3-plotly/issues"
   },
